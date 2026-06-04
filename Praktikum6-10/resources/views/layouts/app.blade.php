@@ -1,33 +1,37 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>@yield('title') | Toko Laravel</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 30px; background: #f5f5f5; }
-        h1, h2 { color: #333; }
-        table { width: 100%; border-collapse: collapse; background: white; }
-        th, td { padding: 10px 14px; border: 1px solid #ddd; text-align: left; }
-        th { background: #4CAF50; color: white; }
-        tr:hover { background: #f1f1f1; }
-        a.btn, button.btn {
-            padding: 7px 14px; border-radius: 4px; border: none;
-            cursor: pointer; text-decoration: none; font-size: 14px;
-        }
-        .btn-green { background: #4CAF50; color: white; }
-        .btn-blue  { background: #2196F3; color: white; }
-        .btn-red   { background: #f44336; color: white; }
-        .alert { padding: 10px; background: #dff0d8; border: 1px solid #3c763d;
-                 color: #3c763d; margin-bottom: 15px; border-radius: 4px; }
-        input, textarea { width: 100%; padding: 8px; margin-top: 5px;
-                          margin-bottom: 12px; border: 1px solid #ccc;
-                          border-radius: 4px; box-sizing: border-box; }
-        .error { color: red; font-size: 13px; }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management System</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+          rel="stylesheet">
 </head>
 <body>
-    <h1>🛒 Aplikasi Data Produk</h1>
-    <hr>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+        <a class="navbar-brand"
+           href="{{ route('students.index') }}">
+            Student Management
+        </a>
+    </div>
+</nav>
+
+<div class="container mt-4">
+
+    @if(session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
+
     @yield('content')
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>

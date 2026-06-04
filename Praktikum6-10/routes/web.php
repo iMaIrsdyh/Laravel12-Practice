@@ -17,3 +17,4 @@ Route::get('/products', [ProductController::class, 'index']);
 Route::resource('mahasiswa', MahasiswaController::class);
 Route::resource('products', ProductController::class);
 Route::resource('customers', CustomerController::class);
+Route::resource('students', StudentController::class);
